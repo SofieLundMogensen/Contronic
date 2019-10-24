@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Installations>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Layout.cshtml";
+     string status = Request.QueryString["status"] != null ? Request.QueryString["status"] : "";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-11 col-sm-offset-1">
+
+            <h1 class="inst-header text-center">@Umbraco.Field("heading")</h1>
+            <p>@Umbraco.Field("text")</p>
+
+        </div>
+
+        <div class="row">
+
+            @foreach (var person in Model.Content.Children())
+            {
+                <div class="col-sm-2 col-sm-offset-2">
+                    <p>
+                        @person.GetPropertyValue("firm") <br />
+                        @person.GetPropertyValue("navn") <br />
+                        @person.GetPropertyValue("number") <br />
+                        @person.GetPropertyValue("email") <br />
+                        @person.GetPropertyValue("city") <br />
+                    </p>
+                </div>
+
+            }
+
+
+        </div>
+
+    </div>
+        </div>
+        <div class="row bg-blue kontakt">
+            <h2 class="text-center">Vil du på listen?</h2>
+            <div class="col-md-3 col-sm-offset-3">
+
+               @Umbraco.Field("text2")
+            </div>
+            <!-- Contact Details Column -->
+
+            <div class="col-md-3 white">
+              <b>Udfyld formularen og kom på listen:</b>
+
+                @using (Html.BeginForm("InstalSender", "ContactSurface", FormMethod.Post))
+                {
+                    @Html.TextBox("firm", null, new { @class = "form-control", @placeholder = "Firma" })
+                    @Html.TextBox("name", null, new { @class = "form-control", @placeholder = "Navn" })
+                    @Html.TextBox("phone", null, new { @class = "form-control", @placeholder = "Telefon" })
+                    @Html.TextBox("userEmail", null, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.TextBox("City", null, new { @class = "form-control", @placeholder = "By" })
+                    @Html.TextArea("message", null, new { @class = "form-control", @placeholder = "Besked" })
+                    <button type="submit" class="btn btn-success">Send</button>
+
+                }
+
+              @if (status == "sent")
+                {<div class="alert alert-success">
+                    Tak for din Mail!
+                </div>
+
+                }
+
+
+                <br /><br /><br />
+            </div>
+
+        </div> 
+
+

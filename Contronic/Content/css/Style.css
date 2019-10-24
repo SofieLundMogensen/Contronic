@@ -1,0 +1,170 @@
+﻿body {
+}
+.green {
+    color: #68b04d;
+}
+
+.bg-blue {
+    background: rgb(49, 62, 79);
+}
+
+.bg-grey {
+    background: rgb(218, 219, 217);
+}
+.white {
+    color: #fff;
+}
+.h1, h1 {
+    font-size: 50px;
+}
+.logo {
+       margin-top: 2%;
+    width: 39%;
+}
+
+.navbar-brand {
+    float: left;
+ 
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-inverse { background-color: #000}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #FFFFFF}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #428BCA}
+.navbar-inverse { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #000}
+.navbar-inverse .navbar-brand { color: #fff}
+.navbar-inverse .navbar-brand:hover { color: #fff}
+.navbar-inverse .navbar-nav>li>a { color: #fff}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #121212}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #000000}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #0000}
+.dropdown-menu>li>a { color: #333333}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+.nav > li > a {
+    padding: 18px 8px;
+}
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+  
+    background-color: #7FB04D;
+}
+
+.nav-stacked>li {
+
+    background: rgba(204, 204, 204, 0.09);
+}
+
+
+.area1 p {
+    font-size: 50px;
+}
+.area1 {
+    position: relative;
+    Z-INDEX: 1;
+        margin-top: -81PX;
+    background: rgba(226, 226, 226, 0.28);
+}
+
+
+.Boks {
+    background: rgba(49, 62, 79, 1);
+    color: #fff;
+    /* padding: 1%; */
+    height: 251px;
+}
+
+
+.bokse {
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.area2 {
+  padding-bottom: 2%;
+}
+
+.area2 p {
+    font-size: 20px;
+
+}
+
+.area2 h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+.kontakt {
+    padding-top: 2%;
+}
+
+.form {
+    margin-top: 5%;
+}
+
+.form-control {
+    margin-top: 2%;
+}
+
+.btn {
+    margin-top: 2%;
+}
+
+.kontakt p{
+    color: white;
+}
+
+.kontakt h2{
+    color: white;
+    font-size: 40px;
+}
+
+
+/*Nyehder*/
+
+.page-header {
+    padding-top: 10%;
+}
+
+
+/*Installatør*/
+
+.inst-header {
+    margin-top: 13%;
+    color: #68b04d;
+}
+
+footer {
+  
+    position: fixed!important;
+    bottom: 0!important;
+    width: 100%;
+    height: 40px;
+    background: #000;
+   
+}
+
+.elearning {
+    width: 261px;
+    height: 220px;
+    background: #68b04d;
+  
+}
+
+.elearning a {
+    color: white;
+    font-size: 20px;
+    
+}

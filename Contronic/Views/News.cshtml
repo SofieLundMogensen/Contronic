@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.News>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <h1 class="page-header">
+            @Model.Content.GetPropertyValue("heading")
+
+        </h1>
+        @foreach (var newsitem in Model.Content.Children())
+        {
+            <div class="col-sm-12">
+
+
+
+                <!-- First Blog Post -->
+                <h2>
+                    <a href="@newsitem.Url">@newsitem.GetPropertyValue("heading")</a>
+                </h2>
+                <p class="lead">
+                    by <a href="@newsitem.Url">Arne Lund Mogensen</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on @newsitem.CreateDate </p>
+            
+                
+                <hr>
+                <p>@Umbraco.Truncate(newsitem.GetPropertyValue("text").ToString(), 250)</p>
+                <a class="btn btn-primary" href="@newsitem.Url">Læs mere <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+
+
+
+            </div>
+        }
+        <!-- Blog Entries Column -->
+
+
+    </div>
+
+</div>
+
+

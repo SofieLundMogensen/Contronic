@@ -1,0 +1,95 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Layout.cshtml";
+    string status = Request.QueryString["status"] != null ? Request.QueryString["status"] : "";
+}
+
+
+<iframe width="1903" height="648" src="https://www.youtube.com/embed/S0mXrDggrnI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<!-- Main -->
+<div id="main-wrapper">
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 area1">
+                <p class="text-center"><b>Salg og Service af </b></p>
+                <h1 class="text-center">Conson, Zensehome og Wifi-LED</h1>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="container bokse">
+                <div class="col-sm-3 col-sm-offset-1 Boks text-center">
+                    <h3 class="green">@Umbraco.Field("boks1Heading")</h3>
+                    <p>@Umbraco.Field("boks1Txt")</p>
+                </div>
+
+                <div class="col-sm-3 col-sm-offset-1 Boks text-center">
+                    <h3 class="green">@Umbraco.Field("boks2Heading")</h3>
+                    <p>@Umbraco.Field("boks2Txt")</p>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1 Boks text-center">
+                    <h3 class="green">@Umbraco.Field("boks3Heading")</h3>
+                    <p>@Umbraco.Field("boks3Txt")</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 area2 bg-grey">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <h2>@Umbraco.Field("textAreaHeading")</h2>
+                    <p>@Umbraco.Field("textAreaTxt")</p>
+                    <a href="/installatoer/" class="btn btn-success">@Umbraco.Field("textAreaButton")</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row bg-blue kontakt">
+            <h2 class="text-center">Spørgsmål til køb, opsætning eller service? </h2>
+            <div class="col-md-4 col-sm-offset-2">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2229.587491456179!2d8.377486516109062!3d56.02581607836937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a512150eec885%3A0xea5df6d99828cc6d!2sContronic+ApS!5e0!3m2!1sen!2sdk!4v1457042374396" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <!-- Contact Details Column -->
+
+            <div class="col-md-4 form">
+
+                <p class="text-center">
+                    Contronic Aps <br />
+                    Bredgade 21, 6940 Lem st<br />
+                    contronic@contronic.dk<br />
+                    Tel: +45 97342000 <br />
+
+                
+                </p>
+                @using (Html.BeginForm("Mailsender", "ContactSurface", FormMethod.Post))
+                {
+                    @Html.TextBox("name", null, new { @class = "form-control", @placeholder = "Navn" })
+                    @Html.TextBox("userEmail", null, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.TextBox("subject", null, new { @class = "form-control", @placeholder = "Emne" })
+                    @Html.TextArea("message", null, new { @class = "form-control", @placeholder = "Besked" })
+                    <button type="submit" class="btn btn-success">Send</button>
+
+                }
+
+              @if (status == "sent")
+                {<div class="alert alert-success">
+                    Tak for din Mail!
+                </div>
+
+                }
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br /> <br />
+
+<!-- /Main -->

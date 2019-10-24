@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Elearning>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-11 col-sm-offset-1">
+
+            <h1 class="inst-header text-center">@Umbraco.Field("heading")</h1>
+            <p>@Umbraco.Field("IntroTxt")</p>
+
+        </div>
+
+    </div>
+        <div class="row">
+          
+
+
+
+
+            @foreach (var video in Model.Content.Children())
+            {
+                <div class="col-sm-4">
+
+
+                    <iframe width="261" height="220" src="@video.GetPropertyValue("video")" frameborder="0" allowfullscreen></iframe>
+                <h3>
+                    @video.GetPropertyValue("heading")
+                </h3>
+                <p>
+                    @video.GetPropertyValue("text")
+                    </p></div>
+
+            }
+
+            <div class="col-sm-4 ">
+               
+                <div class="col-sm-12 elearning text-center">
+                    <br />
+                    <a href="~/Concept/story_html5.html"> Concept 2000Xp Elearning</a>
+                </div>
+                <div class="col-sm-12">
+                    <h3>
+                        XP moduler
+                    </h3>
+                    <p>
+                        Lær om de enkle XP moduler via E-learning
+                    </p>
+                    </div>
+                </div>
+
+
+
+        </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>

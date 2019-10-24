@@ -1,0 +1,67 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Produkter>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        <h1 class="inst-header text-center">@Umbraco.Field("heading") </h1>
+        <p>@Umbraco.Field("textarea")</p><br /><br /><br /><br />
+
+            <div class="col-sm-4">
+             
+
+                <ul class="nav nav-pills nav-stacked">
+                    @foreach (var tab in Model.Content.Children())
+                    {
+                        if (tab.GetPropertyValue("heading").Equals("Conson"))
+                        {
+                            <li class="active"><a data-toggle="tab" href="#@tab.GetPropertyValue("heading").ToString().Replace(" ","-")">@tab.GetPropertyValue("heading")</a></li>
+                        }
+                        else
+                        {
+                            <li><a data-toggle="tab" href="#@tab.GetPropertyValue("heading").ToString().Replace(" ","-")">@tab.GetPropertyValue("heading")</a></li>
+                        }
+                    }
+                </ul>
+                </div>
+      
+                        <div class="col-sm-8">
+                            <div class="tab-content">
+                                @foreach (var tab in Model.Content.Children())
+                                {
+                                    if (tab.GetPropertyValue("heading").Equals("Conson"))
+                                    {
+                                        <div id="@tab.GetPropertyValue("heading").ToString().Replace(" ","-")" class="tab-pane active">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                                                    <h1 class="">@tab.GetPropertyValue("heading")</h1>
+                                                </div>
+                                                <div class="col-xs-12 col-md-offset-1 col-md-10">
+
+                                                    <p>@tab.GetPropertyValue("txtarea")</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div id="@tab.GetPropertyValue("heading").ToString().Replace(" ","-")" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                                                    <h1 class="">@tab.GetPropertyValue("heading")</h1>
+                                                </div>
+                                                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                                                    <p>@tab.GetPropertyValue("txtarea")</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       
